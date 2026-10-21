@@ -1,0 +1,254 @@
+[
+  {
+    "type": "allow",
+    "kind": "exact",
+    "domain": "de.emp.lgsmartplatform.com",
+    "comment": "LG TV: App Store -102 fix (Phase 3 follow-up)"
+  },
+  {
+    "type": "allow",
+    "kind": "exact",
+    "domain": "de.ibs.nextlgsdp.com",
+    "comment": "LG TV: App Store -102 fix (Phase 3 follow-up)"
+  },
+  {
+    "type": "allow",
+    "kind": "exact",
+    "domain": "eic.tv.wiselg.com",
+    "comment": "LG TV: App Store -102 fix (Phase 3 follow-up)"
+  },
+  {
+    "type": "allow",
+    "kind": "exact",
+    "domain": "de.nextlgsdp.com",
+    "comment": "LG TV: Store/app service discovery (error 102 fix)"
+  },
+  {
+    "type": "deny",
+    "kind": "exact",
+    "domain": "ad.lgappstv.com",
+    "comment": "LG TV privacy layer (Phase 2)"
+  },
+  {
+    "type": "deny",
+    "kind": "exact",
+    "domain": "ads.lgtvcommon.com",
+    "comment": "LG TV privacy layer (Phase 2)"
+  },
+  {
+    "type": "deny",
+    "kind": "exact",
+    "domain": "adsdtvc.com",
+    "comment": "LG TV privacy layer (Phase 2)"
+  },
+  {
+    "type": "deny",
+    "kind": "exact",
+    "domain": "ca.nextlgsdp.com",
+    "comment": "LG TV privacy layer (Phase 2)"
+  },
+  {
+    "type": "deny",
+    "kind": "exact",
+    "domain": "cdpbeacon.lgtvcommon.com",
+    "comment": "LG TV privacy layer (Phase 2)"
+  },
+  {
+    "type": "deny",
+    "kind": "exact",
+    "domain": "de.emp.lgsmartplatform.com",
+    "comment": "LG TV privacy layer (Phase 2)"
+  },
+  {
+    "type": "deny",
+    "kind": "exact",
+    "domain": "de.info.lgsmartad.com",
+    "comment": "LG TV privacy layer (Phase 2)"
+  },
+  {
+    "type": "deny",
+    "kind": "exact",
+    "domain": "de.nextlgsdp.com",
+    "comment": "LG TV privacy layer (Phase 2)"
+  },
+  {
+    "type": "deny",
+    "kind": "exact",
+    "domain": "de.rdx2.nextlgsdp.com",
+    "comment": "LG TV privacy layer (Phase 2)"
+  },
+  {
+    "type": "deny",
+    "kind": "exact",
+    "domain": "eic.ads.lgtvcommon.com",
+    "comment": "LG TV privacy layer (Phase 2)"
+  },
+  {
+    "type": "deny",
+    "kind": "exact",
+    "domain": "eic.api.lgtviot.com",
+    "comment": "LG TV privacy layer (Phase 2)"
+  },
+  {
+    "type": "deny",
+    "kind": "exact",
+    "domain": "eic.cdpbeacon.lgtvcommon.com",
+    "comment": "LG TV privacy layer (Phase 2)"
+  },
+  {
+    "type": "deny",
+    "kind": "exact",
+    "domain": "eic.cdplauncher.lgtvcommon.com",
+    "comment": "LG TV privacy layer (Phase 2)"
+  },
+  {
+    "type": "deny",
+    "kind": "exact",
+    "domain": "eic.cdpsvc.lgtvcommon.com",
+    "comment": "LG TV privacy layer (Phase 2)"
+  },
+  {
+    "type": "deny",
+    "kind": "exact",
+    "domain": "eic.lgchhomeapp.lgtvcommon.com",
+    "comment": "LG TV privacy layer (Phase 2)"
+  },
+  {
+    "type": "deny",
+    "kind": "exact",
+    "domain": "eic.lgtviot.com",
+    "comment": "LG TV privacy layer (Phase 2)"
+  },
+  {
+    "type": "deny",
+    "kind": "exact",
+    "domain": "eic.nudge.lgtvcommon.com",
+    "comment": "LG TV privacy layer (Phase 2)"
+  },
+  {
+    "type": "deny",
+    "kind": "exact",
+    "domain": "eic.tv.wiselg.com",
+    "comment": "LG TV privacy layer (Phase 2)"
+  },
+  {
+    "type": "deny",
+    "kind": "exact",
+    "domain": "eic.wiseconfig.lgtvcommon.com",
+    "comment": "LG TV privacy layer (Phase 2)"
+  },
+  {
+    "type": "deny",
+    "kind": "exact",
+    "domain": "homeprv.lgtvcommon.com",
+    "comment": "LG TV privacy layer (Phase 2)"
+  },
+  {
+    "type": "deny",
+    "kind": "exact",
+    "domain": "info.lgsmartad.com",
+    "comment": "LG TV privacy layer (Phase 2)"
+  },
+  {
+    "type": "deny",
+    "kind": "exact",
+    "domain": "initscr.lge.com",
+    "comment": "LG TV privacy layer (Phase 2)"
+  },
+  {
+    "type": "deny",
+    "kind": "exact",
+    "domain": "lgsmartad.com",
+    "comment": "LG TV privacy layer (Phase 2)"
+  },
+  {
+    "type": "deny",
+    "kind": "exact",
+    "domain": "prov-lg.alphonso.tv",
+    "comment": "LG TV privacy layer (Phase 2)"
+  },
+  {
+    "type": "deny",
+    "kind": "exact",
+    "domain": "rdl.lgtvcommon.com",
+    "comment": "LG TV privacy layer (Phase 2)"
+  },
+  {
+    "type": "deny",
+    "kind": "exact",
+    "domain": "recommend.lgtvcommon.com",
+    "comment": "LG TV privacy layer (Phase 2)"
+  },
+  {
+    "type": "deny",
+    "kind": "exact",
+    "domain": "smart.adtvc.app",
+    "comment": "LG TV privacy layer (Phase 2)"
+  },
+  {
+    "type": "deny",
+    "kind": "exact",
+    "domain": "ueiwsp.com",
+    "comment": "LG TV privacy layer (Phase 2)"
+  },
+  {
+    "type": "deny",
+    "kind": "exact",
+    "domain": "www.ueiwsp.com",
+    "comment": "LG TV privacy layer (Phase 2)"
+  },
+  {
+    "type": "deny",
+    "kind": "regex",
+    "domain": "(\\.|^)lgsmartad\\.com$",
+    "comment": "LG TV privacy layer (Phase 2)"
+  },
+  {
+    "type": "deny",
+    "kind": "regex",
+    "domain": "(\\.|^)lgthinq\\.com$",
+    "comment": "LG TV privacy layer (Phase 2)"
+  },
+  {
+    "type": "deny",
+    "kind": "regex",
+    "domain": "(\\.|^)lgtvcommon\\.com$",
+    "comment": "LG TV privacy layer (Phase 2)"
+  },
+  {
+    "type": "deny",
+    "kind": "regex",
+    "domain": "(\\.|^)lgtviot\\.com$",
+    "comment": "LG TV privacy layer (Phase 2)"
+  },
+  {
+    "type": "deny",
+    "kind": "regex",
+    "domain": "(\\.|^)nextlgsdp\\.com$",
+    "comment": "LG TV privacy layer (Phase 2)"
+  },
+  {
+    "type": "deny",
+    "kind": "regex",
+    "domain": "(\\.|^)ngfts\\.lge\\.com$",
+    "comment": "LG TV privacy layer (Phase 2)"
+  },
+  {
+    "type": "deny",
+    "kind": "regex",
+    "domain": "^[a-z][a-z]\\.emp\\.lgsmartplatform\\.com$",
+    "comment": "LG TV privacy layer (Phase 2)"
+  },
+  {
+    "type": "deny",
+    "kind": "exact",
+    "domain": "de.elastic.lgwebostv.com",
+    "comment": "LG TV privacy layer (Phase 7)"
+  },
+  {
+    "type": "deny",
+    "kind": "exact",
+    "domain": "eic-ngfts.lge.com",
+    "comment": "LG TV privacy layer (Phase 7)"
+  }
+]

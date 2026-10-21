@@ -1,0 +1,88 @@
+# LG TV hosts blocklist — a curated, balanced privacy layer.
+# Derived from lg-tv-blocklist (https://github.com/furkan-bayrak/lg-tv-blocklist)
+# lists/safe-hosts.txt plus selected OTA/telemetry/ads/ThinQ/voice entries from
+# lists/strict-hosts.txt, pinned commit
+# 68afe10de07bfdc8e8ecf91a7069a17419597271 (2026-09-28).
+# Upstream lists: lg-tv-blocklist by furkan-bayrak, licensed CC BY 4.0
+# (https://creativecommons.org/licenses/by/4.0/). Changes: selection,
+# extra OTA entries, and additions observed in a TV's DNS log noted below.
+#
+# Deliberately NOT blocked (store/app updates/account base terms stay working):
+#   lgtvsdp.com, lgappstv.com (apex), lge.com (apex), lgeapi.com and all of its
+#   subdomains, lgtvonline.lge.com, lgshopsvc.lgappstv.com, lgshopsvc.*
+# iPad/phone interop discovery (discovery.meethue.com) is also left alone.
+#
+# Installed by the 10-hosts-blocklist init.d hook; see docs/guide.md, step 2.
+
+# --- safe-hosts.txt: telemetry, ads and ACR (19 entries) --------------------
+0.0.0.0 ad.lgappstv.com
+0.0.0.0 ads.lgtvcommon.com
+0.0.0.0 adsdtvc.com
+0.0.0.0 ca.nextlgsdp.com
+0.0.0.0 cdpbeacon.lgtvcommon.com
+0.0.0.0 de.info.lgsmartad.com
+0.0.0.0 eic.api.lgtviot.com
+0.0.0.0 eic.lgtviot.com
+0.0.0.0 eic.nudge.lgtvcommon.com
+0.0.0.0 eic.wiseconfig.lgtvcommon.com
+0.0.0.0 homeprv.lgtvcommon.com
+0.0.0.0 info.lgsmartad.com
+0.0.0.0 initscr.lge.com
+0.0.0.0 lgsmartad.com
+0.0.0.0 recommend.lgtvcommon.com
+0.0.0.0 smart.adtvc.app
+
+# --- strict-hosts.txt: firmware OTA / file transfer ------------------------
+# The OTA set is repeated from the plan even where HBC already mounts some of
+# these names: the hook stacks a second mount and must not lose them.
+0.0.0.0 nsu.lge.com
+0.0.0.0 snu.lge.com
+0.0.0.0 snu-dev.lge.com
+0.0.0.0 su.lge.com
+0.0.0.0 su-dev.lge.com
+0.0.0.0 su-ssl.lge.com
+0.0.0.0 ngfts.lge.com
+0.0.0.0 ngfts.nextlgsdp.com
+0.0.0.0 gfts.lge.com
+0.0.0.0 eic-ngfts.lge.com
+0.0.0.0 eic-ngfts.nextlgsdp.com
+0.0.0.0 eic-gfts.lge.com
+0.0.0.0 aic-ngfts.lge.com
+0.0.0.0 aic-ngfts.nextlgsdp.com
+0.0.0.0 aic-ngfts.tv.wiselg.com
+0.0.0.0 aic-gfts.lge.com
+0.0.0.0 kic-ngfts.lge.com
+0.0.0.0 kic-ngfts.nextlgsdp.com
+0.0.0.0 kic-ngfts.tv.wiselg.com
+0.0.0.0 kic-gfts.lge.com
+
+# --- strict-hosts.txt: telemetry, ACR/ads and home promos (EU cluster) -----
+# eic.* is the Europe datacentre cluster; these are the live names behind the
+# decommissioned bare lgtvcommon.com hosts in the safe list.
+0.0.0.0 eic.ads.lgtvcommon.com
+0.0.0.0 eic.cdpbeacon.lgtvcommon.com
+0.0.0.0 eic.cdplauncher.lgtvcommon.com
+0.0.0.0 eic.cdpsvc.lgtvcommon.com
+0.0.0.0 eic.homeprv.lgtvcommon.com
+0.0.0.0 eic.lgchhomeapp.lgtvcommon.com
+0.0.0.0 eic.recommend.lgtvcommon.com
+0.0.0.0 eic.service.lgtvcommon.com
+0.0.0.0 eic-ocp.lgtviot.com
+0.0.0.0 de.rdx2.nextlgsdp.com
+0.0.0.0 rdx2.nextlgsdp.com
+0.0.0.0 rdl.lgtvcommon.com
+
+# --- strict-hosts.txt: ThinQ / IoT cloud sync ------------------------------
+0.0.0.0 lgthinq.com
+0.0.0.0 lss.lgthinq.com
+0.0.0.0 eic-op-lss.lgthinq.com
+0.0.0.0 eic.lgthinq.com
+
+# --- strict-hosts.txt: voice search backend --------------------------------
+0.0.0.0 lgsmartweb.com
+
+# --- Additions observed in a TV's DNS log ---
+# prov-lg.alphonso.tv is ACR; www.ueiwsp.com is QuickSet/UEI discovery.
+0.0.0.0 prov-lg.alphonso.tv
+0.0.0.0 ueiwsp.com
+0.0.0.0 www.ueiwsp.com

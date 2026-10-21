@@ -1,0 +1,288 @@
+/* Hanken Grotesk (SIL Open Font License, fonts/OFL.txt): one variable file for all weights, Latin only. */
+@font-face {
+  font-family: "Hanken Grotesk";
+  src: url("fonts/hanken-grotesk-latin.woff2") format("woff2");
+  font-weight: 100 900;
+}
+
+/* All design values live here. Change them to restyle the launcher. */
+:root {
+  --color-background: #050506;
+  --color-background-glow: #15151c;
+  --color-tile-fallback: #3a3a42;
+  --color-tile-top: #1c1c22;
+  --color-tile-bottom: #121216;
+  --color-tile-edge: rgba(255, 255, 255, 0.07);
+  --color-sheen: rgba(255, 255, 255, 0.18);
+  --color-on-brand: #ffffff;
+  --color-on-brand-bright: #0a0a0a;
+  --color-text: #f0f0f2;
+  --color-text-dim: #8d8d95;
+  --color-pill: #1c1c22;
+  --color-pill-focus: #f0f0f2;
+  --color-on-pill-focus: #0a0a0a;
+  --color-shadow: rgba(0, 0, 0, 0.7);
+  --color-error: #ff6b6b;
+
+  --font-family: "Hanken Grotesk", sans-serif;
+  --font-size-clock: 96px;
+  --font-size-date: 32px;
+  --font-size-pill: 28px;
+  --font-size-name: 30px;
+  --font-size-mark-text: 36px;
+  --mark-text-width: 80%;
+  --font-size-status: 22px;
+  --font-weight-light: 200;
+  --font-weight-text: 500;
+
+  --top-height: 270px;
+  --page-padding: 96px;
+  --pill-height: 64px;
+  --pill-padding: 36px;
+  --pill-gap: 20px;
+
+  --tile-width: 320px;
+  --tile-height: 192px;
+  --tile-radius: 16px;
+  --mark-width: 50%;
+  --mark-height: 44%;
+  --column-gap: 128px;
+  --row-gap: 76px;
+  --grid-padding-top: 0px;
+  --name-offset: 24px;
+
+  --focus-scale: 1.08;
+  --shadow-blur: 48px;
+  --shadow-offset: 24px;
+  --transition-time: 150ms;
+  --transition-easing: ease-out;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  width: 1920px;
+  height: 1080px;
+  margin: 0;
+  overflow: hidden;
+  background: var(--color-background);
+  background-image: linear-gradient(180deg, var(--color-background-glow) 0%, var(--color-background) 100%);
+  color: var(--color-text);
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-text);
+}
+
+.top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1920px;
+  height: var(--top-height);
+  padding: 0 var(--page-padding);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.clock {
+  font-size: var(--font-size-clock);
+  font-weight: var(--font-weight-light);
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.greeting {
+  margin-top: 12px;
+  font-size: var(--font-size-date);
+}
+
+.date {
+  margin-top: 4px;
+  font-size: var(--font-size-date);
+  color: var(--color-text-dim);
+}
+
+.toolbar {
+  display: flex;
+}
+
+.pill {
+  position: relative;
+  height: var(--pill-height);
+  margin-left: var(--pill-gap);
+  padding: 0 var(--pill-padding);
+  border: 0;
+  border-radius: calc(var(--pill-height) / 2);
+  background: var(--color-pill);
+  color: var(--color-text);
+  font: inherit;
+  font-size: var(--font-size-pill);
+  outline: none;
+  transition: transform var(--transition-time) var(--transition-easing);
+}
+
+.pill:focus {
+  background: var(--color-pill-focus);
+  color: var(--color-on-pill-focus);
+  transform: scale(var(--focus-scale));
+}
+
+.grid {
+  position: absolute;
+  top: var(--top-height);
+  left: 0;
+  width: 1920px;
+  height: calc(1080px - var(--top-height));
+  padding-top: var(--grid-padding-top);
+  display: grid;
+  grid-template-columns: repeat(3, var(--tile-width));
+  grid-auto-rows: var(--tile-height);
+  column-gap: var(--column-gap);
+  row-gap: var(--row-gap);
+  justify-content: center;
+  align-content: start;
+}
+
+.cell {
+  position: relative;
+}
+
+/* At rest the tile is graphite with the logo in the brand color. */
+.tile {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: var(--tile-radius);
+  background: linear-gradient(180deg, var(--color-tile-top) 0%, var(--color-tile-bottom) 100%);
+  box-shadow: inset 0 1px 0 var(--color-tile-edge);
+  font: inherit;
+  outline: none;
+  transition: transform var(--transition-time) var(--transition-easing);
+}
+
+/* Brand color layer with a static sheen: on focus only its opacity changes. */
+.tile::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: inherit;
+  background: linear-gradient(150deg, var(--color-sheen) 0%, rgba(255, 255, 255, 0) 60%), var(--brand, var(--color-tile-fallback));
+  opacity: 0;
+  transition: opacity var(--transition-time) var(--transition-easing);
+}
+
+.mark {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--mark-width);
+  height: var(--mark-height);
+  margin: auto;
+  object-fit: contain;
+  fill: currentColor;
+  transition: opacity var(--transition-time) var(--transition-easing);
+}
+
+/* A tile without logo or icon shows the app name, wrapped and centred. */
+.mark-text {
+  width: var(--mark-text-width);
+  font-size: var(--font-size-mark-text);
+  font-weight: 600;
+  line-height: 1.15;
+  text-align: center;
+}
+
+.mark-rest {
+  color: var(--brand, var(--color-text));
+}
+
+.mark-focus {
+  color: var(--color-on-brand);
+  opacity: 0;
+}
+
+.tile-bright .mark-focus {
+  color: var(--color-on-brand-bright);
+}
+
+.tile:focus::before,
+.tile:focus .mark-focus {
+  opacity: 1;
+}
+
+.tile:focus .mark-rest {
+  opacity: 0;
+}
+
+/* Soft shadow on its own layer: only its opacity changes on focus. */
+.tile::after,
+.pill::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: inherit;
+  box-shadow: 0 var(--shadow-offset) var(--shadow-blur) var(--color-shadow);
+  opacity: 0;
+  transition: opacity var(--transition-time) var(--transition-easing);
+}
+
+.tile:focus::after,
+.pill:focus::after {
+  opacity: 1;
+}
+
+.tile:focus {
+  transform: scale(var(--focus-scale));
+}
+
+.name {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: var(--name-offset);
+  font-size: var(--font-size-name);
+  text-align: center;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity var(--transition-time) var(--transition-easing);
+}
+
+.tile:focus + .name {
+  opacity: 1;
+}
+
+.status {
+  position: absolute;
+  top: 190px;
+  right: var(--page-padding);
+  margin: 0;
+  text-align: right;
+  font-family: monospace;
+  font-size: var(--font-size-status);
+  color: var(--color-text-dim);
+}
+
+.status .error { color: var(--color-error); }
+
+.prompt {
+  position: absolute;
+  right: 48px;
+  bottom: 32px;
+  font-family: "Droid Sans Mono", monospace;
+  font-size: var(--font-size-status);
+  color: var(--color-text-dim);
+}

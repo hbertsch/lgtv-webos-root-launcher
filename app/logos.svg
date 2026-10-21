@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position: absolute">
+  <!-- Logos for the tiles, one symbol per entry, colored with fill: currentColor. -->
+  <!-- Only the Live TV symbol ships, drawn for this app. No brand logos on purpose, see README "Add your own logos". -->
+  <symbol id="logo-livetv" viewBox="1 1 22 22">
+    <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="2" y="8" width="20" height="14" rx="2.5"/>
+      <polyline points="7.5 2.5 12 7 16.5 2.5"/>
+    </g>
+  </symbol>
+</svg>

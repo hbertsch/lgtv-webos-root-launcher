@@ -1,0 +1,11 @@
+[
+  { "title": "Live TV", "appId": "com.webos.app.livetv", "color": "#12877e", "logo": "livetv" },
+  { "title": "Prime Video", "appId": "amazon", "color": "#1a98ff" },
+  { "title": "Netflix", "appId": "netflix", "color": "#e50914" },
+  { "title": "Plex", "appId": "cdp-30", "color": "#e5a00d" },
+  { "title": "YouTube", "appId": "youtube.leanback.v4", "color": "#ff0000" },
+  { "title": "ZDF", "appId": "de.zdf.app.zdfm3", "color": "#ea6a0f" },
+  { "title": "ARD Mediathek", "appId": "ard.mediathek", "color": "#2f7fe0" },
+  { "title": "Nintendo Switch", "appId": "com.webos.app.hdmi2", "color": "#e60012" },
+  { "title": "Xbox", "appId": "com.webos.app.hdmi3", "color": "#1a9a1a" }
+]

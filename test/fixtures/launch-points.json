@@ -1,0 +1,8 @@
+[
+  { "id": "youtube.leanback.kids.v4", "title": "YouTube Kids", "icon": "http://192.0.2.18:3000/resources/yt-kids/icon.png" },
+  { "id": "youtube.leanback.v4", "title": "YouTube", "icon": "http://192.0.2.18:3000/resources/yt/icon.png", "largeIcon": "http://192.0.2.18:3000/resources/yt/large.png" },
+  { "id": "netflix", "title": "Netflix", "icon": "http://192.0.2.18:3000/resources/netflix/icon.png", "largeIcon": "http://192.0.2.18:3000/resources/netflix/large.png" },
+  { "id": "amazon", "title": "Prime Video", "icon": "http://192.0.2.18:3000/resources/amazon/icon.png" },
+  { "id": "com.webos.app.hdmi1", "title": "HDMI1", "icon": "http://192.0.2.18:3000/resources/hdmi1/icon.png" },
+  { "id": "com.webos.app.settings", "title": "Settings" }
+]

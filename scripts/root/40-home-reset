@@ -1,0 +1,9 @@
+#!/bin/sh
+# 40-home-reset — boot hook: give LG's own HOME key handling back at every boot.
+#
+# The launcher service switches that handling off (config com.webos.surfacemanager.disableHome)
+# while it runs, and the setting survives a reboot. This hook runs before 50-launcher, so a TV
+# whose launcher service or hook is missing still opens LG Home on HOME. The service switches
+# the setting off again once its HOME watch runs.
+luna-send -n 1 luna://com.webos.service.config/setConfigs '{"configs":{"com.webos.surfacemanager.disableHome":false}}' >/dev/null 2>&1
+exit 0

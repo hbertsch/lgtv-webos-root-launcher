@@ -1,0 +1,6 @@
+[
+  { "title": "Settings", "appId": "com.palm.app.settings" },
+  { "title": "LG Home", "appId": "com.webos.app.home" },
+  { "title": "App Store", "appId": "com.webos.app.discovery" },
+  { "title": "Homebrew Channel", "appId": "org.webosbrew.hbchannel" }
+]

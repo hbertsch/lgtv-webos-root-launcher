@@ -1,0 +1,60 @@
+#!/bin/sh
+# 10-hosts-blocklist — stack the curated LG ad/telemetry/OTA entries onto the
+# /etc/hosts that Homebrew Channel's startup.sh already bind-mounts.
+#
+# Installed at /var/lib/webosbrew/init.d/10-hosts-blocklist (mode 755).
+# Runs from HBC's run-parts loop on every boot, and can be re-run by hand.
+#
+# Safety rules:
+#   - never writes the underlying /etc/hosts: a new file in /tmp is bind-mounted
+#     over the current mount point, so HBC's mount (and the real file) stay
+#     untouched underneath and every change disappears at reboot;
+#   - on any failure it leaves HBC's mount intact, logs and exits 0, so a boot
+#     can never stall because of this hook;
+#   - re-running is harmless: the block between the BEGIN/END markers is
+#     rebuilt instead of appended twice.
+#
+# Technique after Homebrew Channel services/startup.sh and
+# lg-tv-blocklist examples/webos-hooks (MIT).
+
+set -u
+
+SRC=/var/lib/webosbrew/blocklist.hosts
+WORK=/tmp/launcher-hosts
+LOG=/var/log/10-hosts-blocklist.log
+BEGIN_MARK='# BEGIN launcher blocklist'
+END_MARK='# END launcher blocklist'
+
+log() {
+    echo "$(date '+%Y-%m-%d %H:%M:%S') $*" >>"$LOG" 2>/dev/null
+}
+
+if [ ! -f "$SRC" ]; then
+    log "missing $SRC; leaving HBC hosts mount intact"
+    exit 0
+fi
+
+# Copy the live /etc/hosts (HBC's mount, OTA entries included) and drop our own
+# previous block if this is a re-run.
+if ! awk -v begin="$BEGIN_MARK" '$0 == begin { exit } { print }' \
+    /etc/hosts >"$WORK" 2>>"$LOG"; then
+    log "cannot read /etc/hosts; leaving HBC hosts mount intact"
+    exit 0
+fi
+
+{
+    echo "$BEGIN_MARK"
+    cat "$SRC"
+    echo "$END_MARK"
+} >>"$WORK" 2>>"$LOG" || {
+    log "cannot build $WORK; leaving HBC hosts mount intact"
+    exit 0
+}
+
+if ! /bin/mount --bind "$WORK" /etc/hosts 2>>"$LOG"; then
+    log "bind mount failed; HBC hosts mount intact"
+    exit 0
+fi
+
+log "mounted $WORK over /etc/hosts ($(grep -c '^0\.0\.0\.0' /etc/hosts) blocked names)"
+exit 0

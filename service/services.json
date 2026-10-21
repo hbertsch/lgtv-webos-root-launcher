@@ -1,0 +1,9 @@
+{
+  "id": "lgtv.blueprint.launcher.service",
+  "description": "Boot launcher for lgtv.blueprint.launcher",
+  "services": [
+    {
+      "name": "lgtv.blueprint.launcher.service"
+    }
+  ]
+}
